@@ -29,9 +29,6 @@ function getFormValues (e) {
 
 	console.log(firstName, lastName);
 	FNameValidate(firstName);
-	nameInput.addEventListener("blur",() => {
-		FNameValidate(e)
-	})
 	LNameValidate(lastName);
 	textAreaValidate(text_area);
 	validatEmail (email);
