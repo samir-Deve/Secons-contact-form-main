@@ -1,0 +1,320 @@
+:root {
+	--Primary_Green_lighter: hsl(148, 38%, 91%);
+  --primary_Green_medium: hsl(169, 82%, 27%);
+  --Primary_Red: hsl(0, 66%, 54%);
+
+	--Neutral_White: hsl(0, 0%, 100%);
+  --Neutral_Grey_medium: hsl(186, 15%, 59%);
+  --Neutral_Grey_darker: hsl(187, 24%, 22%);
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+	background-color: var(--Primary_Green_lighter);
+	font-size: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper {
+	background-color: var(--Neutral_White);
+	padding: 1em;
+	margin: 5em 1em;
+	border-radius: 2em;
+}
+
+.wrapper header {
+	margin: 1.8em 0em;
+}
+
+/* Last name & Fist name */
+.wrapper .Fname_Lname_cont {
+	display: flex;
+	flex-direction: column;
+	border: none;
+
+}
+
+.wrapper .Fname_Lname_cont .F_name, .L_name {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 8em;
+
+}
+
+.wrapper .Fname_Lname_cont .F_name label, .L_name label {
+	font-size: 1.2em;
+	color: var(--Neutral_Grey_darker);
+}
+
+.wrapper .Fname_Lname_cont .F_name label .required_icon, .L_name label .required_icon {
+	color: var(--Neutral_Grey_medium);
+}
+
+.wrapper .Fname_Lname_cont .F_name input, .L_name input {
+	height: 2.5em;
+	border: 0.1em solid var(--Neutral_Grey_medium);
+	border-radius: 0.5em;
+	font-size: 1.5em;
+	padding: 0em 0.2em;
+	outline: none;
+}
+
+.wrapper .Fname_Lname_cont .F_name input:focus, .L_name input:focus {
+	border: 0.1em solid var(--Neutral_Grey_darker);
+}
+
+.wrapper .Fname_Lname_cont .F_name .first_error_msg, .L_name .last_error_msg {
+	color: red;
+	height: 2em;
+	display: flex;
+	align-items: center;
+}
+
+/* email */ 
+
+.wrapper .email_address {
+	border: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 8em;
+	margin-bottom: 1em;
+}
+
+.wrapper .email_address label {
+	font-size: 1.2em;
+	color: var(--Neutral_Grey_darker);
+}
+
+.wrapper .email_address label .required_icon {
+	color: var(--Neutral_Grey_medium);
+}
+
+.wrapper .email_address input[type="email"] {
+	height: 2.5em;
+	border: 0.1em solid var(--Neutral_Grey_medium);
+	border-radius: 0.5em;
+	font-size: 1.5em;
+	padding: 0em 0.2em;
+	outline: none;
+}
+
+.wrapper .email_address input[type="email"]:focus {
+	border: 0.1em solid var(--primary_Green_medium);
+}
+
+.wrapper .email_address .email_error_msg {
+	color: red;
+	height: 2em;
+	display: flex;
+	align-items: center;
+}
+
+/* query type */
+.wrapper .query_type {
+	border: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-bottom: 1em;
+}
+
+.wrapper .query_type legend {
+	margin-bottom: 1em;
+	font-size: 1.2em;
+	color: var(--Neutral_Grey_darker);
+}
+
+.wrapper .query_type legend .required_icon {
+	color: var(--Neutral_Grey_medium);
+}
+
+.wrapper .query_type .general_enquery {
+	margin-bottom: 1em;
+}
+
+.wrapper .query_type .general_enquery, .suport_request {
+	border: 0.2em solid var(--Neutral_Grey_medium);
+	padding-left: 2em;
+	height: 4em;
+	border-radius: 1em;
+	display: flex;
+	align-items: center;
+}
+
+.wrapper .query_type .general_enquery input[type="radio"], .suport_request input[type="radio"]{
+	appearance: none;
+	height: 1.5em;
+	width: 1.5em;
+	border: 0.2em solid var(--Neutral_White);
+	border-radius: 50%;
+	outline: 0.3em solid var(--Neutral_Grey_medium);
+	cursor: pointer;
+}
+
+.wrapper .query_type .general_enquery input[type="radio"]:checked, .suport_request  input[type="radio"]:checked{
+	background-color: var(--primary_Green_medium);
+}
+
+.wrapper .query_type .general_enquery:has(input[type="radio"]:checked), .suport_request:has(input[type="radio"]:checked) {
+	background-color: var(--Primary_Green_lighter);
+}
+
+.wrapper .query_type .general_enquery label, .suport_request label {
+	margin-left: 1em;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+.wrapper .query_type .query_type_error_msg {
+	color: red;
+	height: 2em;
+	display: flex;
+	align-items: center;
+}
+/* Message Box */
+
+.wrapper .request_msg_cont {
+	border: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 22em;
+}
+
+.wrapper .request_msg_cont label {
+	margin-bottom: 1em;
+	font-size: 1.2em;
+	color: var(--Neutral_Grey_darker);
+}
+
+.wrapper .request_msg_cont label .required_icon {
+	color: var(--Neutral_Grey_medium);
+}
+
+.wrapper .request_msg_cont textarea {
+	height: 20em;
+	border-radius: 1em;
+	border: 0.1em solid var(--Neutral_Grey_medium);
+	padding: 0.5em;
+	font-size: 1.2em;
+	font-weight: 450;
+	margin-bottom: 0.5em;
+	outline: none;
+}
+
+.wrapper .request_msg_cont textarea:focus {
+	border: 0.1em solid var(--primary_Green_medium);
+}
+
+.wrapper .request_msg_cont .message_error_msg {
+	color: red;
+	height: 2em;
+	display: flex;
+	align-items: center;
+}
+
+/* Consent checkBox */
+
+.wrapper .consent_cont {
+	border: none;
+	margin-top: 2em;
+	display: flex;
+	flex-direction: column;
+}
+
+.wrapper .consent_cont .consent_checkbox {
+	display: flex;
+	align-items: center;
+}
+.wrapper .consent_cont .consent_checkbox label {
+	font-size: 1.2em;
+	margin-left: 1em;
+	cursor: pointer;
+}
+
+.wrapper .consent_cont .consent_checkbox input[type="checkbox"] {
+	appearance: none;
+	height: 1.5em;
+	width: 1.5em;
+	border: 0.2em solid var(--Neutral_Grey_medium);
+	cursor: pointer;
+}
+
+.wrapper .consent_cont .consent_checkbox input[type="checkbox"]:checked {
+	background-image: url('./assets/images/icon-checkbox-check.svg');
+	background-position: center;
+}
+
+.wrapper .consent_cont  .consent_error_msg {
+	color: red;
+	height: 2em;
+	display: flex;
+	align-items: center;
+}
+
+/* Submit button */
+
+.wrapper .submit_btn{
+	border: none;
+	margin-top: 2em;
+}
+.wrapper .submit_btn button {
+	width: 100%;
+	height: 2.5em;
+	font-size: 1.5em;
+	border-radius: 0.5em;
+	border: none;
+	background-color: var(--primary_Green_medium);
+	cursor: pointer;
+	color: var(--Neutral_White);
+}
+.wrapper .submit_btn button:hover {
+	background-color: hsla(169, 82%, 27%, 0.728);
+}
+
+@media (min-width:700px) {
+	.wrapper .Fname_Lname_cont {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 1.5em;
+	}
+
+	.wrapper .Fname_Lname_cont .F_name, .L_name {
+		flex: 1;
+	}
+
+	.wrapper .query_type .query_type_cont{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1em;
+		gap: 1.5em;
+	}
+
+	.wrapper .query_type .query_type_cont .general_enquery {
+		margin: 0em;
+	}
+
+	.wrapper .query_type .query_type_cont .general_enquery, .suport_request {
+		flex: 1;
+	}
+
+}
+
+.attribution { font-size: 16px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
