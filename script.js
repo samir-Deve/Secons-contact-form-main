@@ -12,13 +12,12 @@ const emailInput = form.querySelector(".email_address #email");
 
 const queryTypeError = form.querySelector(".query_type .query_type_error_msg");
 
-
 const areaErrorMsg = form.querySelector(".request_msg_cont .message_error_msg");
 const textArea = form.querySelector(".request_msg_cont #text_area");
 
 const consentErrorMsg = form.querySelector(".consent_cont .consent_error_msg");
 
-
+const success_msg = document.querySelector(".success_msg");
 
 function getFormValues (e) {
 	e.preventDefault()
@@ -26,14 +25,15 @@ function getFormValues (e) {
 	const formDataEntries = Object.fromEntries(formValues)
 	const {checkbox, email, enquiry, firstName, lastName, text_area} = formDataEntries;
 	
-
-	console.log(firstName, lastName);
 	FNameValidate(firstName);
 	LNameValidate(lastName);
 	textAreaValidate(text_area);
 	validatEmail (email);
 	checkBoxValidate(checkbox);
 	radioValidate(enquiry);
+	if(FNameValidate(firstName) && LNameValidate(lastName) && textAreaValidate(text_area) && validatEmail (email) && checkBoxValidate(checkbox) && radioValidate(enquiry) === true) {
+		success_msg.classList.add("show_success_msg");
+	}
 }
 
 function FNameValidate(FName) {
@@ -47,7 +47,8 @@ function FNameValidate(FName) {
 	}
 	else {
 		nameInput.style.borderColor = "green";
-		nameError.innerHTML = ``
+		nameError.innerHTML = ``;
+		return true
 	}
 }
 
@@ -64,6 +65,7 @@ function LNameValidate(LName) {
 	else {
 		lastNameInput.style.borderColor = "green";
 		lastNameError.innerHTML = ``;
+		return true
 	}
 }
 
@@ -80,6 +82,7 @@ function textAreaValidate(msg) {
 	else {
 		textArea.style.borderColor = "green";
 		areaErrorMsg.innerHTML = ``;
+		return true
 	}
 }
 
@@ -96,6 +99,7 @@ function validatEmail (email) {
 	else {
 		emailInput.style.borderColor = "green";
 		emailErrorMsg.innerHTML = ``;
+		return true
 	}
 }
 
@@ -104,16 +108,18 @@ function checkBoxValidate(checkBox) {
 		consentErrorMsg.innerHTML = `To submit this form please consent to being contacted !`
 	}
 	else if(checkBox) {
-				consentErrorMsg.innerHTML = ``
+		consentErrorMsg.innerHTML = ``;
+		return true
 	}
 }
 
 function radioValidate(radioValue) {
 	if(!radioValue) {
-		queryTypeError.innerHTML = `Please select a query type !`
+		queryTypeError.innerHTML = `Please select a query type !`;
 	}
 	else if(radioValue) {
-		queryTypeError.innerHTML = ``
+		queryTypeError.innerHTML = ``;
+		return true
 	}
 }
 

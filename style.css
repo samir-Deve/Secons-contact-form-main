@@ -285,6 +285,46 @@ body {
 	background-color: hsla(169, 82%, 27%, 0.728);
 }
 
+/* Success Message ! */
+
+section {
+	position: relative;
+}
+
+.success_msg {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: absolute;
+	padding: 1em;
+	top: -11em;
+	left: 5em;
+	background-color: var(--Neutral_Grey_darker);
+	border-radius: 0.5em;
+	color: var(--Neutral_White);
+	opacity: 0;
+	transition: opacity 1s ease;
+}
+
+.success_msg header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1em;
+	margin-top: 0.2em;
+}
+
+.success_msg header .icon {
+	margin-right: 1em;
+}
+
+.success_msg .success_msg_text {
+}
+
+.success_msg.show_success_msg {
+	opacity: 1;
+}
+
+
 @media (min-width:700px) {
 	.wrapper .Fname_Lname_cont {
 		display: flex;
